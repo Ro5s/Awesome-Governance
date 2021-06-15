@@ -1,3 +1,7 @@
+/**
+ *Submitted for verification at Etherscan.io on 2021-06-14
+*/
+
 pragma solidity ^0.5.16;
 pragma experimental ABIEncoderV2;
 
@@ -334,7 +338,7 @@ contract GovernanceToken {
      * @param account The initial account to grant all the tokens
      */
     constructor(address account, string memory _name, string memory _symbol, uint _totalSupply) public {
-        balances[account] = uint96(totalSupply);
+        balances[account] = uint96(_totalSupply);
         name = _name;
         symbol = _symbol;
         totalSupply = _totalSupply;
@@ -971,13 +975,13 @@ contract CloneFactory {
 
 contract GovernanceFactory is CloneFactory {
     address public timeLockTemplate;
-    address public GovernorAlphaTemplate;
+    address public governorAlphaTemplate;
     
     event DeployGovernance(address indexed token, address indexed timelock, address indexed governor);
     
-    constructor(address _timeLockTemplate, address _GovernorAlphaTemplate) public {
+    constructor(address _timeLockTemplate, address _governorAlphaTemplate) public {
         timeLockTemplate = _timeLockTemplate;
-        GovernorAlphaTemplate = _GovernorAlphaTemplate;
+        governorAlphaTemplate = _governorAlphaTemplate;
     }
     
     function deployGovernance(address admin, string calldata _name, string calldata _symbol, uint _totalSupply, uint timeLockDelay, uint _quorumVotes, uint _proposalThreshold, uint _votingPeriod) external {
@@ -996,7 +1000,7 @@ contract GovernanceFactory is CloneFactory {
     }
     
     function initGovernor(address timelock, address token, address admin, string memory _name, uint _quorumVotes, uint _proposalThreshold, uint _votingPeriod) private returns (address governor) {
-        governor = address(GovernorAlpha(createClone(GovernorAlphaTemplate)));
+        governor = address(GovernorAlpha(createClone(governorAlphaTemplate)));
         GovernorAlpha(governor).init(timelock, token, admin, _name, _quorumVotes, _proposalThreshold, _votingPeriod);
     }
 }
