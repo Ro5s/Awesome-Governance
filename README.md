@@ -1,6 +1,10 @@
 # Awesome Governance 🗳️✨
 Contracts, links and other stuff that makes Governance Awesome.
 
+## [SNAPSHOT](https://snapshot.org/#/) 📸
+
+Snapshots capture voting weights at any given block time to signal on governance decisions.
+
 ## COMPOUND-STYLE (TOKENIZED PROTOCOLS) 🌐
 
 ### [Tally](https://www.withtally.com/) 📋
