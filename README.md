@@ -10,7 +10,7 @@ Snapshots capture voting weights at any given block time to signal on governance
 ### [Tally](https://www.withtally.com/) 📋
 - View and vote using governance tokens, governor (polling) & timelock (execution).
 
-To deploy this kind of system, a demo factory [is on mainnet](https://etherscan.io/address/0x72237Caa65c3092Be989D997D19C2b6c694ac8b0#writeContract). To use Tally, coordinate with team - [discord](https://discord.com/invite/sCGnpWH3m4).
+To deploy this kind of system, a demo factory [is on mainnet](https://etherscan.io/address/0x72237Caa65c3092Be989D997D19C2b6c694ac8b0#writeContract), and you can also use this [neat dApp](https://gov-alpha-deploy.netlify.app/) provided by Tally team to get started.  
 
 ## MOLOCH-STYLE (VENTURE, GUILDS) 👹
 
